@@ -20,7 +20,7 @@ public class Game {
   }
 
   public void setName(String setName) throws IllegalArgumentException {
-    if (Name != null && !Name.isEmpty()) {
+    if (setName != null && !setName.isEmpty()) {
       this.Name = setName;
     } 
     else {
@@ -33,7 +33,7 @@ public class Game {
   }
 
   public void setPlatform(String setPlatform) {
-    if (Platform != null && !Platform.isEmpty()) {
+    if (setPlatform != null && !setPlatform.isEmpty()) {
       this.Platform = setPlatform;
     } 
     else {
@@ -46,7 +46,7 @@ public class Game {
   }
 
   public void setDateOfPurchase(String setDateOfPurchase) {
-    if (DateOfPurchase != null && !DateOfPurchase.isEmpty()) {
+    if (setDateOfPurchase != null && !setDateOfPurchase.isEmpty()) {
       this.DateOfPurchase = setDateOfPurchase;
     } 
     else {

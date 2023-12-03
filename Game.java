@@ -65,4 +65,10 @@ public class Game {
       throw new IllegalArgumentException("Invalid entry, check and try again");
     }
   }
+
+  public void displayDetails() {
+    System.out.println("Name: " + getName());
+    System.out.println("Platform: " + getPlatform());
+    System.out.println("D.O.P.: " + getDateOfPurchase());
+  }
 }

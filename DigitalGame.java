@@ -46,5 +46,13 @@ public class DigitalGame extends Game {
       throw new IllegalArgumentException("Invalid entry, check and try again");
     }
   }
+
+  @Override
+  public void displayDetails(){
+    super.displayDetails();
+    System.out.println("Format: " + getFormat());
+    System.out.println("Store: " + getStore());
+    System.out.println("Size (in GB): " + getSize());
+  }
 }
 

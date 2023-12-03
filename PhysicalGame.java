@@ -46,6 +46,14 @@ public class PhysicalGame extends Game{
       throw new IllegalArgumentException("Invalid entry, check and try again");
     }
   }
+
+  @Override
+  public void displayDetails(){
+    super.displayDetails();
+    System.out.println("Format: " + getFormat());
+    System.out.println("No. of Discs: " + getNumberOfDiscs());
+    System.out.println("Condition: " + getCondition());
+  }
 }
 
   

@@ -12,7 +12,7 @@ public class Main {
       if (userChoice == 1) {
         addNewGame();
       } else if (userChoice == 2) {
-        displayGameList();
+        displayGameList(GameList);
       } else if (userChoice == 3) {
         System.out.println("Exiting the program...");
         break;
@@ -86,24 +86,30 @@ public class Main {
     // System.out.println("Added to library successfully!");
   }
 
-  private static void displayGameList() {
+  private static void displayGameList(List<Game> gameList) {
     System.out.println("Game Library:");
-    for (Game game : GameList) {
-      System.out.println("Name: " + game.getName());
-      System.out.println("Platform: " + game.getPlatform());
-      System.out.println("D.O.P.: " + game.getDateOfPurchase());
-
-      if (game instanceof PhysicalGame) {
-        PhysicalGame physicalGame = (PhysicalGame) game;
-        System.out.println("Format: " + physicalGame.getFormat());
-        System.out.println("No. of Discs: " + physicalGame.getNumberOfDiscs());
-        System.out.println("Condition: " + physicalGame.getCondition());
-      } else if (game instanceof DigitalGame) {
-        DigitalGame digitalGame = (DigitalGame) game;
-        System.out.println("Format: " + digitalGame.getFormat());
-        System.out.println("Store: " + digitalGame.getStore());
-        System.out.println("Size (in GB): " + digitalGame.getSize());
-      }
+    System.out.println();
+    for (Game game : gameList) {
+      game.displayDetails();
+      System.out.println();
     }
+
+    // for (Game game : GameList) {
+    //   System.out.println("Name: " + game.getName());
+    //   System.out.println("Platform: " + game.getPlatform());
+    //   System.out.println("D.O.P.: " + game.getDateOfPurchase());
+
+    //   if (game instanceof PhysicalGame) {
+    //     PhysicalGame physicalGame = (PhysicalGame) game;
+    //     System.out.println("Format: " + physicalGame.getFormat());
+    //     System.out.println("No. of Discs: " + physicalGame.getNumberOfDiscs());
+    //     System.out.println("Condition: " + physicalGame.getCondition());
+    //   } else if (game instanceof DigitalGame) {
+    //     DigitalGame digitalGame = (DigitalGame) game;
+    //     System.out.println("Format: " + digitalGame.getFormat());
+    //     System.out.println("Store: " + digitalGame.getStore());
+    //     System.out.println("Size (in GB): " + digitalGame.getSize());
+    //   }
+    // }
   }
 }

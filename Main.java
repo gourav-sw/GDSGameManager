@@ -48,9 +48,42 @@ public class Main {
     System.out.println("Enter the date of purchase: ");
     String dateOfPurchase = userInput.nextLine();
 
-    Game newGame = new Game(name, platform, dateOfPurchase);
-    GameList.add(newGame);
-    System.out.println("Added to library successfully!");
+    while(true){
+      System.out.println("Select the game format:");
+      System.out.println("1. Physical Game");
+      System.out.println("2. Digital Game");
+      int userChoice = userInput.nextInt();
+
+      if (userChoice == 1) {
+        System.out.println("Enter the number of discs:");
+        int numberOfDiscs = userInput.nextInt();
+        userInput.nextLine();
+        System.out.println("Enter the condition:");
+        String condition = userInput.nextLine();
+
+        PhysicalGame newPhysicalGame = new PhysicalGame(name, platform, dateOfPurchase, numberOfDiscs, condition);
+        GameList.add(newPhysicalGame);
+        System.out.println("Added to library successfully!");
+        break;
+      } else if (userChoice == 2) {
+        System.out.println("Enter the digital store/download link");
+        String store = userInput.nextLine();
+        userInput.nextLine();
+        System.out.println("Enter the download size");
+        double size = userInput.nextDouble();
+
+        DigitalGame newDigitalGame = new DigitalGame(name, platform, dateOfPurchase, store, size);
+        GameList.add(newDigitalGame);
+        System.out.println("Added to library successfully!");
+        break;
+      } else {
+        System.out.println("Invalid choice. Please try again.");
+      }
+    }
+
+    // Game newGame = new Game(name, platform, dateOfPurchase);
+    // GameList.add(newGame);
+    // System.out.println("Added to library successfully!");
   }
 
   private static void displayGameList() {
@@ -59,7 +92,18 @@ public class Main {
       System.out.println("Name: " + game.getName());
       System.out.println("Platform: " + game.getPlatform());
       System.out.println("D.O.P.: " + game.getDateOfPurchase());
+
+      if (game instanceof PhysicalGame) {
+        PhysicalGame physicalGame = (PhysicalGame) game;
+        System.out.println("Format: " + physicalGame.getFormat());
+        System.out.println("No. of Discs: " + physicalGame.getNumberOfDiscs());
+        System.out.println("Condition: " + physicalGame.getCondition());
+      } else if (game instanceof DigitalGame) {
+        DigitalGame digitalGame = (DigitalGame) game;
+        System.out.println("Format: " + digitalGame.getFormat());
+        System.out.println("Store: " + digitalGame.getStore());
+        System.out.println("Size (in GB): " + digitalGame.getSize());
+      }
     }
   }
-
 }

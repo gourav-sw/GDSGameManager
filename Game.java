@@ -9,10 +9,22 @@ public class Game {
     this.DateOfPurchase = "N/A";
   }
 
-  public Game(String name, String platform, String dateOfPurchase) {
-    this.Name = name;
-    this.Platform = platform;
-    this.DateOfPurchase = dateOfPurchase;
+  public Game(String name, String platform, String dateOfPurchase) throws IllegalArgumentException {
+    if (name != null && !name.isEmpty()) {
+      this.Name = name;
+    } else {
+      throw new IllegalArgumentException("Invalid entry, check and try again");
+    }
+    if (platform != null && !platform.isEmpty()) {
+      this.Platform = platform;
+    } else {
+      throw new IllegalArgumentException("Invalid entry, check and try again");
+    }
+    if (dateOfPurchase != null && !dateOfPurchase.isEmpty()) {
+      this.DateOfPurchase = dateOfPurchase;
+    } else {
+      throw new IllegalArgumentException("Invalid entry, check and try again");
+    }
   }
 
   public String getName() {
@@ -54,5 +66,3 @@ public class Game {
     }
   }
 }
-
-

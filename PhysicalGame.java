@@ -1,17 +1,24 @@
 public class PhysicalGame extends Game{
-  int NumberOfDiscs;
-  String Condition;
+  protected String Format;
+  protected int NumberOfDiscs;
+  protected String Condition;
 
   public PhysicalGame() {
     super();
+    this.Format = "Physical Game";
     this.NumberOfDiscs = 0;
     this.Condition = "N/A";
   }
 
   public PhysicalGame(String name, String platform, String dateOfPurchase, int numberOfDiscs, String condition) {
     super(name, platform, dateOfPurchase);
+    this.Format = "Physical Game";
     this.NumberOfDiscs = numberOfDiscs;
     this.Condition = condition;
+  }
+
+  public String getFormat() {
+    return Format;
   }
 
   public int getNumberOfDiscs() {

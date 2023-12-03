@@ -1,16 +1,24 @@
-public class DigitalGame {
+public class DigitalGame extends Game {
+  String Format;
   String Store;
   double Size;
 
   public DigitalGame() {
+    super();
+    this.Format = "Digital Game";
     this.Store = "N/A";
     this.Size = 0;
   }
 
-  public DigitalGame(String name, String platform, String dateOfPurchase, String store, int size) {
-    super();
+  public DigitalGame(String name, String platform, String dateOfPurchase, String store, double size) {
+    super(name, platform, dateOfPurchase);
+    this.Format = "Digital Game";
     this.Store = store;
     this.Size = size;
+  }
+
+  public String getFormat() {
+    return Format;
   }
 
   public String getStore() {

@@ -87,12 +87,17 @@ public class Main {
   }
 
   private static void displayGameList(List<Game> gameList) {
-    System.out.println("Game Library:");
-    System.out.println();
-    for (Game game : gameList) {
-      game.displayDetails();
+    if (!gameList.isEmpty()) {
+      System.out.println("Game Library:");
       System.out.println();
-    }
+      for (Game game : gameList) {
+        game.displayDetails();
+        System.out.println();
+      }
+    } else {
+      System.out.println("Game Library is empty.");
+  }
+    
 
     // for (Game game : GameList) {
     //   System.out.println("Name: " + game.getName());

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Game {
+public abstract class Game {
   private String Name;
   private String Platform;
   private String DateOfPurchase;

@@ -62,11 +62,11 @@ public class PhysicalGame extends Game{
     super.editGame();
     Scanner userInput = new Scanner(System.in);
 
-    System.out.println("Enter new no. of discs:");
+    System.out.println("Enter new no. of discs: ");
     int newNumberOfDiscs = userInput.nextInt();
     this.setNumberOfDiscs(newNumberOfDiscs);
     userInput.nextLine();
-    System.out.println("Enter new condition:");
+    System.out.println("Enter new condition: ");
     String newCondition = userInput.nextLine();
     this.setCondition(newCondition);
   }

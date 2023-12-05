@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Game {
   private String Name;
   private String Platform;
@@ -70,5 +72,19 @@ public class Game {
     System.out.println("Name: " + getName());
     System.out.println("Platform: " + getPlatform());
     System.out.println("D.O.P.: " + getDateOfPurchase());
+  }
+
+  public void editGame() {
+    Scanner userInput = new Scanner(System.in);
+
+    System.out.println("Enter new name:");
+    String newName = userInput.nextLine();
+    this.setName(newName);
+    System.out.println("Enter new platform:");
+    String newPlatform = userInput.nextLine();
+    this.setPlatform(newPlatform);
+    System.out.println("Enter new date of purchase:");
+    String newDateOfPurchase = userInput.nextLine();
+    this.setDateOfPurchase(newDateOfPurchase);
   }
 }

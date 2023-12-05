@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class DigitalGame extends Game {
   String Format;
   String Store;
@@ -53,6 +55,19 @@ public class DigitalGame extends Game {
     System.out.println("Format: " + getFormat());
     System.out.println("Store: " + getStore());
     System.out.println("Size (in GB): " + getSize());
+  }
+
+  @Override
+  public void editGame() {
+    super.editGame();
+    Scanner userInput = new Scanner(System.in);
+
+    System.out.println("Enter new no. of discs:");
+    String newStore = userInput.nextLine();
+    this.setStore(newStore);
+    System.out.println("Enter new size (in GB):");
+    double newSize = userInput.nextDouble();
+    this.setSize(newSize);
   }
 }
 

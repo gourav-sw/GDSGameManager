@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class PhysicalGame extends Game{
   protected String Format;
   protected int NumberOfDiscs;
@@ -54,6 +56,18 @@ public class PhysicalGame extends Game{
     System.out.println("No. of Discs: " + getNumberOfDiscs());
     System.out.println("Condition: " + getCondition());
   }
-}
 
-  
+  @Override
+  public void editGame() {
+    super.editGame();
+    Scanner userInput = new Scanner(System.in);
+
+    System.out.println("Enter new no. of discs:");
+    int newNumberOfDiscs = userInput.nextInt();
+    this.setNumberOfDiscs(newNumberOfDiscs);
+    userInput.nextLine();
+    System.out.println("Enter new condition:");
+    String newCondition = userInput.nextLine();
+    this.setCondition(newCondition);
+  }
+}
